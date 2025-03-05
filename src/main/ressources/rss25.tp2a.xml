@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed lang="EN" version="25" xmlns="http://univ.fr/rss25" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univ.fr/rss25 rss25.tp1.xsd ">
+  <title>title</title>
+  <pubDate>2001-12-31T12:00:00</pubDate>
+  <copyright>copyright</copyright>
+  <link href="http://tempuri.org" rel="self" type=""/>
+  <item>
+    <guid>45676906-00d1-403b-92b2-f23053dd388b</guid>
+    <title>title</title>
+    <category term=""/>
+    <published>2001-12-31T12:00:00</published>
+    <content type="text">content</content>
+    <author>
+      <name>name</name>
+    </author>
+  </item>
+</feed>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:feed lang="EN" version="25" xmlns:p="http://univ.fr/rss25" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univ.fr/rss25 rss25.tp1.xsd ">
+
+
+	<p:title>Physique : Toute l’actualité sur Le Monde.fr.</p:title>
+	<p:pubDate>2025-02-26T11:11:08</p:pubDate>
+	<p:copyright>Le Monde</p:copyright>
+	<p:link rel="self" type="application/atom+xml" href="https://www.lemonde.fr/physique/rss_full.xml"/>
+	<p:item>
+		<p:guid>https://www.lemonde.fr/sciences/article/2025/02/21/ordinateurs-quantiques-microsoft-jette-un-pave-dans-la-mare_6557701_1650684.html</p:guid>
+		<p:title>Ordinateurs quantiques : Microsoft dit être en mesure de les commercialiser d’ici à quelques années</p:title>
+		<p:category term="Quantique"/>
+		<p:published>2025-02-21T17:00:25</p:published>
+		<p:image alt="Image de l'ordinateur quantique" type="jpeg" href="https://img.lemde.fr/2025/02/20/167/0/2000/1000/644/322/60/0/b5f3402_sirius-fs-upload-1-gv03gmukptbh-1740046405354-majorana-1-002-4000px-1.jpg"/>
+		<p:content type="text">L’entreprise américaine a annoncé avoir fabriqué un matériau révolutionnaire, qui lui permettrait d’accélérer la réalisation d’un tel ordinateur, attendu dans quelques décennies dans ses précédentes prévisions.</p:content>
+		<p:author>
+			<p:name>John Brecher</p:name>
+		</p:author>
+	</p:item>
+	<p:item>
+		<p:guid>https://www.lemonde.fr/sciences/article/2025/02/18/la-maitrise-de-la-fusion-nucleaire-franchit-une-etape-avec-le-cea_6552914_1650684.html</p:guid>
+		<p:title>Le CEA franchit une étape vers la maîtrise de la fusion nucléaire et dépasse la Chine</p:title>
+		<p:category term="Nucléaire"/>
+		<p:updated>2025-02-19T11:38:16</p:updated>
+		<p:content type="text">Sur son site des Bouches-du-Rhône, le Commissariat à l’énergie atomique est parvenu à maintenir un plasma plus de vingt-deux minutes à une température stationnaire de 50 millions de degrés Celsius. Un record réalisé grâce au tokamak WEST, qui détrône de cinq minutes celui obtenu par son rival, le tokamak chinois EAST, en janvier.</p:content>
+		<p:author>
+			<p:name>LAURENCE GODART</p:name>
+			<p:uri>https://www.cea.fr/</p:uri>
+		</p:author>
+	</p:item>
+	<p:item>
+		<p:guid>https://www.lemonde.fr/sciences/article/2025/02/16/alain-aspect-prix-nobel-de-physique-l-echec-fait-partie-du-metier-le-decouragement-parfois-aussi_6548816_1650684.html</p:guid>
+		<p:title>Alain Aspect, Prix Nobel de physique : « L’échec fait partie du métier, le découragement parfois aussi »</p:title>
+		<p:category term="Quantique"/>
+		<p:published>2025-02-16T05:00:12</p:published>
+		<p:image alt="Alain Aspect dans son bureau de Saclay" type="jpeg"	href="https://img.lemde.fr/2025/02/13/1574/0/4480/2240/644/322/60/0/8af84f5_sirius-fs-upload-1-26qwrjuatr1w-1739456765057-t6a0269.jpg"/>
+		<p:content type="text">« Je ne serais pas arrivé là si… » Chaque semaine, « Le Monde » interroge une personnalité sur un moment décisif de son existence. Le physicien revient aux sources de son amour de la physique expérimentale, puisé dans son village du Sud-Ouest.</p:content>
+		<p:author>
+			<p:name>SIMONE PEROLARI</p:name>
+		</p:author>
+	</p:item>
+	<p:item>
+		<p:guid>https://www.lemonde.fr/disparitions/article/2025/02/12/la-mort-d-yvonne-choquet-bruhat-pionniere-des-etudes-sur-les-ondes-gravitationnelles_6543990_3382.html</p:guid>
+		<p:title>La mort d’Yvonne Choquet-Bruhat, pionnière des études sur les ondes gravitationnelles</p:title>
+		<p:category term="Théorie"/>
+		<p:published>2025-02-12T19:11:59</p:published>
+		<p:image alt="La mathématicienne et physicienne française Yvonne Choquet-Bruhat pose après avoir été	élue membre de l’Académie des sciences, à Antony (Hauts-de-Seine), le 14 mai 1979."
+				type="jpeg" href="https://img.lemde.fr/2025/02/12/468/0/5616/2808/644/322/60/0/e856844_sirius-fs-upload-1-rkx2bwibz96c-1739382196893-000-8xu83w.jpg"/>
+		<p:content type="text">L’importance des travaux de la scientifique française, aux confins des mathématiques et de la physique théorique, lui avait valu d’être la première femme élue à l’Académie des sciences. Elle est morte le 11 février, à 101 ans.</p:content>
+		<p:author>
+			<p:name>JOEL ROBINE</p:name>
+			<p:email>joel;robine@afp.fr</p:email>
+		</p:author>				
+	</p:item>
+	<p:item>
+		<p:guid>https://www.lemonde.fr/sciences/article/2025/02/12/ampere-genial-touche-a-tout-et-stereotype-du-savant-distrait_6543438_1650684.html</p:guid>
+		<p:title>Ampère, génial touche-à-tout et stéréotype du savant distrait</p:title>
+		<p:category term="Historique"/>
+		<p:updated>2025-02-13T09:42:16</p:updated>
+		<p:content type="text">Dans sa carte blanche au « Monde », Etienne Ghys rend hommage au scientifique auteur de multiples découvertes, dont on célèbre cette année le 250ᵉ anniversaire de la naissance.</p:content>
+		<p:author>
+			<p:name >Chez Gertrud</p:name>
+		</p:author>
+	</p:item>
+	<p:item>
+		<p:guid>https://www.lemonde.fr/sciences/article/2025/01/10/un-robot-flottant-pour-ecumer-les-microplastiques_6491123_1650684.html</p:guid>
+		<p:title>Un robot flottant pour écumer les microplastiques</p:title>
+		<p:category term="Robotique"/>
+		<p:published>2025-01-10T10:00:11</p:published>
+		<p:content type="text">Après avoir travaillé sur la récupération de pétrole dans l’eau, une équipe coréenne a adapté son outil pour aspirer les billes de plastique présentes en surface.</p:content>
+		<p:contributor>
+			<p:name>CHEZ Gertrud</p:name>
+		</p:contributor>
+	</p:item>
+</p:feed>
+
