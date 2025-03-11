@@ -3,12 +3,13 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:p="http://univ.fr/rss25"
     version="1.0">
-<xsl:output method="html"
- doctype-public="html"
- omit-xml-declaration="yes"
- encoding="UTF-8"
- indent="yes"
-/>
+	<xsl:output method="html"
+	 doctype-public="html"
+	 omit-xml-declaration="yes"
+	 encoding="UTF-8"
+	 indent="yes"
+	/>
+	<!-- template pour l'élément root du document-->
 	<xsl:template match="/">
 	 	<xsl:element name="html">
 	 		<xsl:element name="head">
@@ -24,7 +25,8 @@
 			<h2>Détail des informations</h2>
 			<xsl:apply-templates select="p:feed/p:item"/>
 		</xsl:element>
-</xsl:template>
+	</xsl:template>
+	<!-- template pour afficher la description-->
 	 <xsl:template name="descriptionTemplate">
 		 <xsl:element name="h3">
 			 Description
@@ -41,7 +43,7 @@
 			</xsl:element>
 	 	</xsl:element>
 	 </xsl:template>
-	<!-- Template pour chaque item -->
+	<!-- template pour afficher un article-->
 	<xsl:template match="p:item">
 		<xsl:element name="div">
 			<xsl:attribute name="class">item</xsl:attribute>
