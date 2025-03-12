@@ -32,8 +32,17 @@
 
     <dependencies>
         <!-- Dependencies -->
-    
-    
+        <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>Saxon-HE</artifactId>
+            <version>12.5</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!-- Testing dependencies-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -101,7 +110,7 @@
                 </execution>
                 </executions>
             </plugin>
-           	
+           	<!--
 			<plugin>
 				 <groupId>org.maven.plugins</groupId>
 				 <artifactId>maven-site-plugin</artifactId>
@@ -112,6 +121,7 @@
 				 <artifactId>maven-project-info-reports-plugin</artifactId>
 				 <version>3.8.0</version>
 			</plugin>
+			-->
         </plugins>
     </build>
 </project>
