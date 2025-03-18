@@ -1,0 +1,51 @@
+h1,h2,h3{
+    color: blue;
+    font-weight: bold;
+}
+h1
+{
+    text-align: center;
+}
+img
+{
+    width:  500px;
+    height: 300px;
+}
+.guid-item
+{
+    font-style: italic;
+}
+.list-sommaire li:nth-child(2n){
+    background: #d3d3d3;
+}
+/* Style global pour le tableau de synthèse */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+tr:nth-child(2n){
+    background-color: lightgrey;
+}
+.cat-historique { color: slateBlue; }
+.cat-theorie   { color: indigo; }
+.cat-nucleaire { color: red; }
+.cat-quantique { color: darkGoldenRod; }
+.cat-planete   { color: yellowGreen; }
+.cat-technique { color: lavender; }
+.cat-robotique { color: darkGreen; }
+.cat-default   { color: black; }
+
+.contributor { font-style: italic; }
+
+.category-item {
+    display: block;
+    margin: 2px 0;
+}

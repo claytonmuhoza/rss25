@@ -18,6 +18,7 @@
                 <xsl:call-template name="titrePrincipaleTemplate"/>
                 <xsl:call-template name="descriptionTemplate"/>
                 <xsl:call-template name="sommaireTemplate"/>
+                <xsl:call-template name="syntheseTableTemplate"/>
                 <h2>Détail des informations</h2>
                 <xsl:apply-templates select="p:feed/p:item"/>
             </xsl:element>
@@ -26,23 +27,19 @@
     <!-- contenu de la balise head -->
     <xsl:template name="headTemplate">
         <xsl:element name="head">
-            <xsl:element name="title"><xsl:text>TP3 - Flux RSS25</xsl:text>
+            <xsl:element name="title"><xsl:text>TP4 - Flux RSS25</xsl:text>
             </xsl:element>
             <xsl:element name="link">
                 <xsl:attribute name="rel">stylesheet</xsl:attribute>
-                <xsl:attribute name="href">./style.css</xsl:attribute>
+                <xsl:attribute name="href">./rss25.css</xsl:attribute>
             </xsl:element>
         </xsl:element>
 
     </xsl:template>
     <!-- Contenu de la balise body -->
-    <xsl:template name="currentDate">
-
-
-    </xsl:template>
     <xsl:template name="titrePrincipaleTemplate">
         <xsl:element name="h1"><xsl:text>TP3 - Flux RSS25</xsl:text></xsl:element>
-        <xsl:element name="p"><xsl:text>Le </xsl:text>  <xsl:value-of select="current-date()"/></xsl:element>
+        <xsl:element name="p"><xsl:text>Le </xsl:text>  <xsl:value-of select="format-date(current-date(),'[D01]/[M]/[Y]')"/></xsl:element>
     </xsl:template>
     <!-- template pour afficher la description-->
     <xsl:template name="descriptionTemplate">
@@ -213,47 +210,106 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    <!-- template pour afficher un article-->
-<!--    <xsl:template name="tableauItem" match="p:feed">-->
-<!--        <xsl:element name="tr">-->
-<!--            <xsl:attribute name="class">article</xsl:attribute>-->
-<!--            <xsl:element name="td">-->
-<!--                <xsl:value-of select="p:title"/>-->
-<!--            </xsl:element>-->
-
-
-<!--            <xsl:element name="td">-->
-<!--                <xsl:element name="span">-->
-<!--                    <xsl:text>Catégorie :</xsl:text>-->
-<!--                </xsl:element>-->
-<!--                <xsl:text> </xsl:text>-->
-<!--                <xsl:value-of select="p:category/@term"/>-->
-<!--            </xsl:element>-->
-<!--            <xsl:element name="td">-->
-<!--                <xsl:choose>-->
-<!--                    <xsl:when test="p:published">-->
-<!--                        <xsl:apply-templates select="p:published"/>-->
-<!--                    </xsl:when>-->
-<!--                    <xsl:otherwise>-->
-<!--                        <xsl:apply-templates select="p:updated"/>-->
-<!--                    </xsl:otherwise>-->
-<!--                </xsl:choose>-->
-<!--            </xsl:element>-->
-
-<!--            &lt;!&ndash; Informations sur l'auteur ou le contributeur &ndash;&gt;-->
-<!--            <xsl:element name="td">-->
-<!--                <xsl:choose>-->
-<!--                    <xsl:when test="p:author">-->
-<!--                        <xsl:text>Auteur :</xsl:text>-->
-<!--                    </xsl:when>-->
-<!--                    <xsl:when test="p:contributor">-->
-<!--                        <xsl:text> </xsl:text>-->
-<!--                        <xsl:value-of select="p:contributor/p:name"/>-->
-<!--                    </xsl:when>-->
-<!--                </xsl:choose>-->
-<!--            </xsl:element>-->
-<!--        </xsl:element>-->
-<!--    </xsl:template>-->
+    <xsl:variable name="catTerm" select="lower-case(p:category[1]/@term)"/>
+    <xsl:variable name="catClass">
+        <xsl:choose>
+            <xsl:when test="$catTerm = 'historique'">cat-historique</xsl:when>
+            <xsl:when test="$catTerm = 'théorie' or $catTerm = 'theorie'">cat-theorie</xsl:when>
+            <xsl:when test="$catTerm = 'nucléaire' or $catTerm = 'nucleaire'">cat-nucleaire</xsl:when>
+            <xsl:when test="$catTerm = 'quantique'">cat-quantique</xsl:when>
+            <xsl:when test="$catTerm = 'planete'">cat-planete</xsl:when>
+            <xsl:when test="$catTerm = 'technique'">cat-technique</xsl:when>
+            <xsl:when test="$catTerm = 'robotique'">cat-robotique</xsl:when>
+            <xsl:otherwise>cat-default</xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <xsl:template name="syntheseTableTemplate">
+        <!-- Calcul du nombre total d'articles -->
+        <xsl:variable name="total" select="count(/p:feed/p:item)"/>
+        <xsl:element name="h2">Synthèse des articles</xsl:element>
+        <xsl:element name="table">
+            <xsl:element name="tr">
+                <xsl:element name="th">n°</xsl:element>
+                <xsl:element name="th">Titre</xsl:element>
+                <xsl:element name="th">Date</xsl:element>
+                <xsl:element name="th">Catégories</xsl:element>
+                <xsl:element name="th">Auteurs</xsl:element>
+            </xsl:element>
+            <xsl:for-each select="/p:feed/p:item">
+                <xsl:sort select="if (p:published) then p:published else p:updated" order="descending"/>
+                <xsl:variable name="catTerm" select="lower-case(p:category[1]/@term)"/>
+                <xsl:variable name="catClass">
+                    <xsl:choose>
+                        <xsl:when test="$catTerm = 'historique'">cat-historique</xsl:when>
+                        <xsl:when test="$catTerm = 'théorie' or $catTerm = 'theorie'">cat-theorie</xsl:when>
+                        <xsl:when test="$catTerm = 'nucléaire' or $catTerm = 'nucleaire'">cat-nucleaire</xsl:when>
+                        <xsl:when test="$catTerm = 'quantique'">cat-quantique</xsl:when>
+                        <xsl:when test="$catTerm = 'planete'">cat-planete</xsl:when>
+                        <xsl:when test="$catTerm = 'technique'">cat-technique</xsl:when>
+                        <xsl:when test="$catTerm = 'robotique'">cat-robotique</xsl:when>
+                        <xsl:otherwise>cat-default</xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:element name="tr">
+                    <xsl:attribute name="class">
+                        <xsl:value-of select="$catClass"/>
+                    </xsl:attribute>
+                    <xsl:element name="td">
+                        <xsl:value-of select="concat(position(), ' / ', $total)"/>
+                    </xsl:element>
+                    <xsl:element name="td">
+                        <xsl:variable name="fullTitle" select="p:title"/>
+                        <xsl:variable name="truncatedTitle"
+                                      select="if (string-length($fullTitle) > 45)
+                                        then concat(substring($fullTitle,1,45), '...')
+                                        else $fullTitle"/>
+                        <xsl:choose>
+                            <xsl:when test="p:content/@src">
+                                <xsl:element name="a">
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of select="p:content/@src"/>
+                                    </xsl:attribute>
+                                    <xsl:value-of select="$truncatedTitle"/>
+                                </xsl:element>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="$truncatedTitle"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:element>
+                    <td>
+                        <xsl:choose>
+                            <xsl:when test="p:published">
+                                <xsl:apply-templates select="p:published"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="p:updated"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </td>
+                    <td>
+                        <xsl:value-of select="p:category/@term" />
+                    </td>
+                    <td>
+                        <xsl:choose>
+                            <xsl:when test="p:author">
+                                <xsl:value-of select="p:author/p:name"/>
+                            </xsl:when>
+                            <xsl:when test="p:contributor">
+                                <xsl:attribute name="class">
+                                    <xsl:text>contributor</xsl:text>
+                                </xsl:attribute>
+                                <xsl:value-of select="p:contributor/p:name"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>Non spécifié</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </td>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
     <xsl:template match="p:published | p:updated | p:feed/p:pubDate | datedujours">
         <!--  récupèration de la date complète -->
         <xsl:variable name="dateTime" select="."/>

@@ -10,7 +10,7 @@ public class TestXSLT {
     public void createHTML() throws TransformerException {
         File xsltFile = new File("src/main/ressources/rss25.tp4.xslt");
         File xmlFile = new File("src/main/ressources/rss25.tp3.xml");
-        File htmlFile = new File("src/main/ressources/transformation1.html");
+        File htmlFile = new File("src/main/ressources/cv24.tp4.html");
         StreamResult htmlSource = new StreamResult(htmlFile);
         StreamSource xmlSource = new StreamSource(xmlFile);
         StreamSource xsltSource = new StreamSource(xsltFile);
